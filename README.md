@@ -51,7 +51,6 @@ Update your `application.html.erb` to read the look like the following. This wil
       <%= csrf_meta_tags %>
     </head>
     <body>
-    <div class="wrap">
       <%= render 'layouts/navigation' %>
       <div class="container-fluid">
         <div class="row">
@@ -61,8 +60,8 @@ Update your `application.html.erb` to read the look like the following. This wil
           </div>
         </div>
       </div>
-    </div>
-    <%= render 'layouts/footer' %>
+      <div class="clearfix"></div>
+      <%= render 'layouts/footer' %>
     </body>
     </html>
 
@@ -115,116 +114,6 @@ Add the following html to your page
       </div>
     </form>
         
-### Sidebar helper
-
-The sidebar helper provides a simple method to use for building out a left navigation. To use this method you will need to modify the `application.erb` code from above as follows.
-
-    <div class="wrap">
-      [remove] <%= render 'layouts/navigation' %> [/remove]
-      [add]
-      <div class="col-sm-3 col-md-2 accordion sidebar" id="acd1">
-        <div class="accordion-group">
-            <div class="accordion-heading" id="menu-controller">
-              <ul class="nav nav-stacked nav-sidebar">
-                <li>
-                  <a class="accordion-toggle collapsed"><i class="glyphicon glyphicon-plus"></i></a>
-                </li>
-              </ul>
-            </div>
-        </div>
-        <%= SidebarHelper.render_menu self, menu_items %>
-      </div>
-      [/add]
-      <div class="container-fluid">
-        <div class="row">
-          <%= render 'layouts/sidebar' %>
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-xs-offset-2 main">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-    </div>
-
-#### Methods
-
-    render_menu( Object, Array)
-    
-#### Params
-    
-    (type) Object: ActionView object is used for template helpers to write html tags
-    
-    (type) Array: An array of objects to use to generate links and sub-menu items
-    
-    \javascript
-    Example: [
-               {
-                 icon: 'dashboard',
-                 name: 'Reports',
-                 url: '#',
-                 sub_menu: [
-                   {
-                     name: 'VLM Programming Direct',
-                     url: '#'
-                   },
-                   {
-                     name: 'Geo-temporal',
-                     url: '#'
-                   }
-                 ]
-               },
-               {
-                 icon: 'reports',
-                 name: 'API',
-                 url: '#',
-                 active: true,
-                 sub_menu: [
-                   {
-                     name: 'VLM Programming Direct',
-                     url: '#',
-                     active: true
-                   },
-                   {
-                     name: 'Geo-temporal',
-                     url: '#'
-                   }
-                 ]
-               }
-             ]
-
-#### Description
-    
-| name      |  type    | description                                                                                                                                                                                                   | required  |  default value |
-|-----------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|----------------|
-| icon      |  string  | Name of icon will be appended to the glyphicon class name.<br/><br/><b>Example</b>: icon: 'reports'<br/><br/><b>Response with</b>: glyphicon-reports<br/><br/>CSS styleing is handled through bootstrap.      |  y        |                |
-| name      |  string  | Name to be used in the link.                                                                                                                                                                                  |  y        |                |
-| active    |  boolean | Ads an active class for the active url. This logic is not maintained within the gem, but can be set within the application.                                                                                   |  n        |  false         |
-| url       |  string  | Url for the link.                                                                                                                                                                                             |  n        |  #             |
-| sub_menu  |  array   | An array of link objects. Sub-menu links do not support icon usage.                                                                                                                                           |  n        |                |
-
-
-Sample navigation.yml format. This is a template that can be used for setting up your yml file. Your application logic will have to set the default active states so that it is dynamic per page load.
-
-    ---
-    # Menu Items
-    - icon: 'dashboard'
-      name: 'Reports'
-      url: '#'
-      sub_menu:
-        - name: 'VLM Programming Direct'
-          url: '#'
-        - name: 'Geo-temporal'
-          url: '#'
-    - icon: 'reports'
-      name: 'API'
-      url: '#'
-      active: true
-      sub_menu:
-        - name: 'VLM Programming Direct'
-          url: '#'
-          active: true
-        - name: 'Geo-temporal'
-          url: '#'
-
 ## Plugins
 
 ### Datepicker

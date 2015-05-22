@@ -1,6 +1,6 @@
 {
   "name": "verve-bootstrap-sass",
-  "version": "3.3.3-rc.1.1.0",
+  "version": "3.3.3-rc.1.1.1",
   "description": "verve-bootstrap-sass is a fork of the bootstrap sass project for Verve Wireless",
   "main": "assets/javascripts/bootstrap.js",
   "repository": {

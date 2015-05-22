@@ -81,7 +81,6 @@
   }
   
   nav.sidebar .navbar-nav > li > a {
-     border-bottom: 1px solid $navbar-rule-color;
      color: $nav-sidebar-link-color;
   }
 	/* .....NavBar: Icon only with coloring/layout.....*/
@@ -223,3 +222,106 @@
 	section{
 		padding-left: 15px;
 	}
+
+nav.sidebar.navbar { margin-top: 0px; overflow-y: scroll; }
+nav.sidebar.navbar > .navbar-collapse { margin-bottom: 40px; }
+
+// Sidebar Nav
+
+.nav-spacer,
+nav.sidebar .navbar-nav > li a.accordion-toggle {
+  height: 40px;
+}
+nav.sidebar .navbar-nav > li > i,
+nav.sidebar .navbar-nav > li > span > a {
+  color: $nav-sidebar-link-color;
+}
+nav.sidebar .navbar-nav > li:hover > i,
+nav.sidebar .navbar-nav > li:hover > span > a {
+  color: $nav-sidebar-link-color-active;
+}
+nav.sidebar .navbar-nav > li > span > a:hover{
+  text-decoration: none;
+}
+
+// accordion styles
+nav.sidebar .navbar-nav > li > a.accordion-toggle{
+  border-collapse: collapse;
+  padding: 0px;
+  color: $nav-sidebar-link-color;
+}
+nav.sidebar .navbar-nav > li:last-child { border-bottom: 0px; }
+nav.sidebar .navbar-nav > li a.accordion-toggle:hover,
+nav.sidebar .navbar-nav > li a.accordion-toggle:active {
+  color: $nav-sidebar-link-color-active;
+}
+nav.sidebar .navbar-nav > li a.accordion-toggle {
+  .caret {
+    border-top: 6px solid;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    float: right;
+    margin: 17px 10px 0 0;
+    position: relative;
+  }
+}
+nav.sidebar .navbar-nav > li > .accordion-body > li a.accordion-toggle {
+  .caret {
+    margin: 17px -3px 0 0;
+  }
+}
+nav.sidebar .navbar-nav > li a.accordion-toggle[aria-expanded="true"] {
+  .caret {
+    border-top: 6px solid transparent;
+    border-right: 6px solid;
+    border-bottom: 6px solid transparent;
+    margin-top: 13px;
+  }
+}
+nav.sidebar .navbar-nav > li a.accordion-toggle.active,
+nav.sidebar .navbar-nav > li a:hover.accordion-toggle.active,
+nav.sidebar .navbar-nav > li a:active.accordion-toggle.active {
+  background-color: $nav-sidebar-background-color;
+}
+ul.accordion-body {
+  padding: 0;
+}
+nav.sidebar .navbar-nav > li .accordion-body {
+  background-color: $nav-sidebar-accordion-background-color;
+}
+nav.sidebar .navbar-nav > li .accordion-body > li {
+  min-height: 40px;
+  line-height: 40px;
+  list-style: none;
+  background-color: $dropdown-bg;
+  border-bottom: 1px solid $dropdown-divider-bg;
+  border-collapse: collapse;
+}
+nav.sidebar .navbar-nav > li .accordion-body > li:hover,
+nav.sidebar .navbar-nav > li .accordion-body > li:hover.active,
+nav.sidebar .navbar-nav > li .accordion-body > li:active,
+nav.sidebar .navbar-nav > li .accordion-body > li:active.active,
+nav.sidebar .navbar-nav > li .accordion-body > li.active{
+  background-color: $nav-sidebar-background-color;
+}
+nav.sidebar .navbar-nav > li .accordion-body > li:last-child{ border-bottom: 0px; }
+nav.sidebar .navbar-nav > li .accordion-body > li > a {
+  padding-left: 20px;
+}
+nav.sidebar .navbar-nav > li .accordion-body {
+  border-top: 1px solid $dropdown-divider-bg;
+  border-collapse: collapse;
+}
+nav.sidebar .navbar-nav > li .accordion-body > li > a { display: block; }
+nav.sidebar .navbar-nav > li .accordion-body > li .accordion-body > li > a {
+  padding-left: 30px;
+}
+nav.sidebar .navbar-nav > li .accordion-body > li .accordion-body > li > a:before {
+  border-top: 4px solid transparent;
+  border-left: 4px solid;
+  border-bottom: 4px solid transparent;
+  content: "";
+  display: inline-block;
+  left: -10px;
+  position: relative;
+}
