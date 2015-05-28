@@ -223,8 +223,15 @@
 		padding-left: 15px;
 	}
 
-nav.sidebar.navbar { margin-top: 0px; overflow-y: scroll; }
-nav.sidebar.navbar:hover { z-index: 1; }
+nav.sidebar.navbar {
+  margin-top: 0px;
+  overflow-y: scroll;
+  @media(min-width: 768px){
+    &:hover {
+      z-index: 1 !important;
+    }
+  }
+}
 nav.sidebar.navbar > .navbar-collapse { margin-bottom: 40px; }
 
 // Sidebar Nav
