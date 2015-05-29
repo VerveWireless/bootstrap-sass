@@ -9,7 +9,7 @@
       </button>
       <a class="navbar-brand" href="/"></a>
     </div>
-    <nav id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+    <!--<nav id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-flash"></span> Style Guide <b class="caret"></b></a>
@@ -64,16 +64,16 @@
             </li>
           </ul>
         </li>
-      </ul>
+      </ul>-->
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.email unless user.nil? %> <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= user.try(&:email).to_s unless user.nil? %> <b class="caret"></b></a>
           <ul class="dropdown-menu inline profile">
             <li>
-              <% unless user.nil? %>
-              <div class="profile-image"><%= image_tag "https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}.png?s=120", class: "gravatar" %></div>
-              <h5><%= user.name %></h5>
-              <p><%= user.email %><br>Logged in as: <%= user.kind %></p>
+              <% if user %>
+              <div class="profile-image"><%= image_tag "https://secure.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.try(&:email).to_s)}.png?s=120", class: "gravatar" %></div>
+              <h5><%= user.try(&:name).to_s %></h5>
+              <p><%= user.try(&:email).to_s %><br>Logged in as: <%= user.try(&:kind).to_s %></p>
               <% end %>
             </li>
             <li>

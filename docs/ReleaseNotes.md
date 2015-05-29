@@ -1,6 +1,12 @@
 ## Release Notes
 
-05/28/2015, version: 3.3.3-rc.1.1.1
+05/28/2015, version: 3.3.3-rc.1.1.3
+- [BUG] Changed sidebar z-index when hovering for > 768px to larger num.
+- [BUG] Fix profile navigation logout button alignment.
+- [SUPVLMO-466] Update navigation partial, fix for undefined user methods.
+- [FEATURE] Temporarily disabled context dropdown menu for other products. TODO: Build helper method for applying link options 
+
+05/28/2015, version: 3.3.3-rc.1.1.2
 - [BUG] Fixes sidebar z-index when hovering for > 768px
 
 05/22/2015, version: 3.3.3-rc.1.1.1

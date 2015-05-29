@@ -227,9 +227,7 @@ nav.sidebar.navbar {
   margin-top: 0px;
   overflow-y: scroll;
   @media(min-width: 768px){
-    &:hover {
-      z-index: 1 !important;
-    }
+    z-index: 1000;
   }
 }
 nav.sidebar.navbar > .navbar-collapse { margin-bottom: 40px; }

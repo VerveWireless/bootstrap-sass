@@ -11,9 +11,6 @@
   @include box-shadow($shadow);
   min-height: 42px;
   padding: 0 18px;
-  #btn-logout {
-    margin-left: 86px;
-  }
 }
 .navbar-toggle {
   border-color: $navbar-toggle-border;
@@ -151,7 +148,7 @@
   line-height: 18px;
 }
 .navbar-nav > li .dropdown-menu.profile > li:first-child { margin-bottom: 60px; width: 100%; }
-.navbar-nav > li .dropdown-menu.profile > li:last-child { text-align: center; }
+.navbar-nav > li .dropdown-menu.profile > li:last-child { text-align: center; width: 100%; }
 .navbar-nav > li .dropdown-menu.profile > li > .btn span { margin-right: 7px; }
 .navbar-nav > li .dropdown-menu.profile > li > .btn:first-child { margin-right: 14px; }
 
